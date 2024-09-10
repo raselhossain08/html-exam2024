@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,38 @@
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 p-6">
     <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-2xl font-bold mb-6 text-center">HTML Exam</h1>
         <form id="examForm" class="space-y-4">
+            <div class="mb-4 text-center">
+                <span id="timer" class="text-xl font-semibold text-red-600">60:00</span>
+            </div>
+
+            <!-- Start Button -->
+            <button id="startButton" onclick="startQuiz()"
+                class="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+                Start
+            </button>
             <!-- Student Information -->
             <div class="mb-4">
                 <label for="studentName" class="block text-gray-700 font-medium">Name:</label>
-                <input type="text" id="studentName" name="studentName" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="studentName" name="studentName" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <!-- Previous Questions Here... -->
             <!-- Additional Questions Based on Your Request -->
-               <!-- Question 1: What is HTML? -->
+            <!-- Question 1: What is HTML? -->
             <div class="question">
                 <p class="font-medium text-gray-800">1. What is HTML?</p>
                 <label class="block">
                     <input type="radio" name="q1" value="correct" class="mr-2"> A markup language for creating web pages
                 </label>
                 <label class="block">
-                    <input type="radio" name="q1" value="incorrect" class="mr-2"> A programming language for web development
+                    <input type="radio" name="q1" value="incorrect" class="mr-2"> A programming language for web
+                    development
                 </label>
                 <label class="block">
                     <input type="radio" name="q1" value="incorrect" class="mr-2"> A database management system
@@ -52,13 +65,16 @@
             <div class="question">
                 <p class="font-medium text-gray-800">3. What are HTML attributes used for?</p>
                 <label class="block">
-                    <input type="radio" name="q3" value="correct" class="mr-2"> To provide additional information about HTML elements
+                    <input type="radio" name="q3" value="correct" class="mr-2"> To provide additional information about
+                    HTML elements
                 </label>
                 <label class="block">
-                    <input type="radio" name="q3" value="incorrect" class="mr-2"> To define the structure of the document
+                    <input type="radio" name="q3" value="incorrect" class="mr-2"> To define the structure of the
+                    document
                 </label>
                 <label class="block">
-                    <input type="radio" name="q3" value="incorrect" class="mr-2"> To perform calculations in the document
+                    <input type="radio" name="q3" value="incorrect" class="mr-2"> To perform calculations in the
+                    document
                 </label>
             </div>
 
@@ -79,7 +95,8 @@
             <!-- Question 5: HTML Paragraphs -->
             <div class="question">
                 <p class="font-medium text-gray-800">5. Which tag is used for creating a paragraph in HTML?</p>
-                <input type="text" name="q5" placeholder="Example" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" name="q5" placeholder="Example" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="question">
@@ -126,7 +143,8 @@
             <!-- Question: HTML Comments -->
             <div class="question">
                 <p class="font-medium text-gray-800">10. How do you write a comment in HTML?</p>
-                <input type="text" name="q10" placeholder="Example:" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" name="q10" placeholder="Example:" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="question">
@@ -155,9 +173,10 @@
                     <input type="radio" name="blockTag" value="incorrect" class="mr-2"> &lt;a&gt;
                 </label>
             </div>
-             <!-- Question: HTML Layout Tags -->
-             <div class="question">
-                <p class="font-medium text-gray-800">13. Which of the following tags is commonly used for layout purposes in HTML?</p>
+            <!-- Question: HTML Layout Tags -->
+            <div class="question">
+                <p class="font-medium text-gray-800">13. Which of the following tags is commonly used for layout
+                    purposes in HTML?</p>
                 <label class="block">
                     <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;section&gt;
                 </label>
@@ -173,7 +192,8 @@
             </div>
             <!-- Question: HTML Input Types -->
             <div class="question">
-                <p class="font-medium text-gray-800">14. Which input type is used for entering a numeric value in HTML?</p>
+                <p class="font-medium text-gray-800">14. Which input type is used for entering a numeric value in HTML?
+                </p>
                 <label class="block">
                     <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="text"
                 </label>
@@ -187,51 +207,64 @@
                     <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="password"
                 </label>
             </div>
-              <!-- Question: HTML id Attribute -->
-              <div class="question">
-                <p class="font-medium text-gray-800">15. What is the purpose of the <code>id</code> attribute in HTML?</p>
+            <!-- Question: HTML id Attribute -->
+            <div class="question">
+                <p class="font-medium text-gray-800">15. What is the purpose of the <code>id</code> attribute in HTML?
+                </p>
                 <label class="block">
-                    <input type="radio" name="idAttribute" value="correct" class="mr-2"> To uniquely identify an element within the document
+                    <input type="radio" name="idAttribute" value="correct" class="mr-2"> To uniquely identify an element
+                    within the document
                 </label>
                 <label class="block">
-                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To style multiple elements at once
+                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To style multiple elements at
+                    once
                 </label>
                 <label class="block">
-                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To create a link to another page
+                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To create a link to another
+                    page
                 </label>
             </div>
 
             <!-- Question: HTML class Attribute -->
             <div class="question">
-                <p class="font-medium text-gray-800">16. What is the purpose of the <code>class</code> attribute in HTML?</p>
+                <p class="font-medium text-gray-800">16. What is the purpose of the <code>class</code> attribute in
+                    HTML?</p>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To uniquely identify an element within the document
+                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To uniquely identify an
+                    element within the document
                 </label>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="correct" class="mr-2"> To apply CSS styles to multiple elements
+                    <input type="radio" name="classAttribute" value="correct" class="mr-2"> To apply CSS styles to
+                    multiple elements
                 </label>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To set the default language of the document
+                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To set the default
+                    language of the document
                 </label>
             </div>
 
-             <!-- Question: HTML Responsive Design -->
-             <div class="question">
-                <p class="font-medium text-gray-800">17. Which HTML element is used to ensure a webpage is responsive on different devices?</p>
+            <!-- Question: HTML Responsive Design -->
+            <div class="question">
+                <p class="font-medium text-gray-800">17. Which HTML element is used to ensure a webpage is responsive on
+                    different devices?</p>
                 <label class="block">
-                    <input type="radio" name="responsiveDesign" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                    <input type="radio" name="responsiveDesign" value="correct" class="mr-2"> &lt;meta name="viewport"
+                    content="width=device-width, initial-scale=1"&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;meta charset="UTF-8"&gt;
+                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;meta
+                    charset="UTF-8"&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;link rel="stylesheet" href="styles.css"&gt;
+                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;link
+                    rel="stylesheet" href="styles.css"&gt;
                 </label>
             </div>
 
             <!-- Question: HTML Layout Elements -->
             <div class="question">
-                <p class="font-medium text-gray-800">18. Which of the following tags is commonly used for layout structuring in HTML?</p>
+                <p class="font-medium text-gray-800">18. Which of the following tags is commonly used for layout
+                    structuring in HTML?</p>
                 <label class="block">
                     <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;header&gt;
                 </label>
@@ -244,7 +277,8 @@
             </div>
             <!-- Question: HTML Links -->
             <div class="question">
-                <p class="font-medium text-gray-800">19. Which attribute is used to specify the URL for a link in HTML?</p>
+                <p class="font-medium text-gray-800">19. Which attribute is used to specify the URL for a link in HTML?
+                </p>
                 <label class="block">
                     <input type="radio" name="q11" value="correct" class="mr-2"> href
                 </label>
@@ -258,7 +292,8 @@
 
             <!-- Question: HTML Images -->
             <div class="question">
-                <p class="font-medium text-gray-800">20. What attribute is used to specify the path of an image in HTML?</p>
+                <p class="font-medium text-gray-800">20. What attribute is used to specify the path of an image in HTML?
+                </p>
                 <label class="block">
                     <input type="radio" name="q12" value="correct" class="mr-2"> src
                 </label>
@@ -274,7 +309,8 @@
             <div class="question">
                 <p class="font-medium text-gray-800">21. How do you specify a favicon for a webpage?</p>
                 <label class="block">
-                    <input type="radio" name="q13" value="correct" class="mr-2"> &lt;link rel="icon" href="favicon.ico"&gt;
+                    <input type="radio" name="q13" value="correct" class="mr-2"> &lt;link rel="icon"
+                    href="favicon.ico"&gt;
                 </label>
                 <label class="block">
                     <input type="radio" name="q13" value="incorrect" class="mr-2"> &lt;icon src="favicon.ico"&gt;
@@ -300,9 +336,11 @@
 
             <!-- Question: HTML Responsive Web Design -->
             <div class="question">
-                <p class="font-medium text-gray-800">23. Which HTML tag is essential for making a webpage responsive?</p>
+                <p class="font-medium text-gray-800">23. Which HTML tag is essential for making a webpage responsive?
+                </p>
                 <label class="block">
-                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport"
+                    content="width=device-width, initial-scale=1"&gt;
                 </label>
                 <label class="block">
                     <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;title&gt;
@@ -328,7 +366,8 @@
 
             <!-- Question: HTML Multimedia -->
             <div class="question">
-                <p class="font-medium text-gray-800">25. Which tag is used for embedding multimedia content, such as a video or audio, in HTML?</p>
+                <p class="font-medium text-gray-800">25. Which tag is used for embedding multimedia content, such as a
+                    video or audio, in HTML?</p>
                 <label class="block">
                     <input type="radio" name="q28" value="correct" class="mr-2"> &lt;embed&gt;
                 </label>
@@ -356,7 +395,8 @@
             <div class="question">
                 <p class="font-medium text-gray-800">27. Where do you set the title of an HTML page?</p>
                 <label class="block">
-                    <input type="radio" name="q14" value="correct" class="mr-2"> Inside the &lt;title&gt; tag within the &lt;head&gt; section
+                    <input type="radio" name="q14" value="correct" class="mr-2"> Inside the &lt;title&gt; tag within the
+                    &lt;head&gt; section
                 </label>
                 <label class="block">
                     <input type="radio" name="q14" value="incorrect" class="mr-2"> Inside the &lt;body&gt; section
@@ -412,7 +452,8 @@
             <div class="question">
                 <p class="font-medium text-gray-800">31. What is the purpose of a &lt;div&gt; element?</p>
                 <label class="block">
-                    <input type="radio" name="q18" value="correct" class="mr-2"> To divide content into sections or containers
+                    <input type="radio" name="q18" value="correct" class="mr-2"> To divide content into sections or
+                    containers
                 </label>
                 <label class="block">
                     <input type="radio" name="q18" value="incorrect" class="mr-2"> To create a hyperlink
@@ -440,13 +481,15 @@
             <div class="question">
                 <p class="font-medium text-gray-800">33. What is unique about the id attribute in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q20" value="correct" class="mr-2"> It must be unique within the HTML document
+                    <input type="radio" name="q20" value="correct" class="mr-2"> It must be unique within the HTML
+                    document
                 </label>
                 <label class="block">
                     <input type="radio" name="q20" value="incorrect" class="mr-2"> It can be repeated multiple times
                 </label>
                 <label class="block">
-                    <input type="radio" name="q20" value="incorrect" class="mr-2"> It can only be used in &lt;div&gt; elements
+                    <input type="radio" name="q20" value="incorrect" class="mr-2"> It can only be used in &lt;div&gt;
+                    elements
                 </label>
             </div>
 
@@ -454,7 +497,8 @@
             <div class="question">
                 <p class="font-medium text-gray-800">34. What is the purpose of an &lt;iframe&gt; in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q21" value="correct" class="mr-2"> To embed another HTML document within the current document
+                    <input type="radio" name="q21" value="correct" class="mr-2"> To embed another HTML document within
+                    the current document
                 </label>
                 <label class="block">
                     <input type="radio" name="q21" value="incorrect" class="mr-2"> To create a form
@@ -496,13 +540,16 @@
             <div class="question">
                 <p class="font-medium text-gray-800">37. What is the purpose of the &lt;head&gt; element in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q24" value="correct" class="mr-2"> To contain meta-information, links to stylesheets, and the document title
+                    <input type="radio" name="q24" value="correct" class="mr-2"> To contain meta-information, links to
+                    stylesheets, and the document title
                 </label>
                 <label class="block">
-                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To display the main content of the page
+                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To display the main content of the
+                    page
                 </label>
                 <label class="block">
-                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To create headers within the page body
+                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To create headers within the page
+                    body
                 </label>
             </div>
             <!-- Question: HTML Audio -->
@@ -534,9 +581,11 @@
 
             <!-- Question: HTML Responsive Web Design -->
             <div class="question">
-                <p class="font-medium text-gray-800">40. Which HTML tag is essential for making a webpage responsive?</p>
+                <p class="font-medium text-gray-800">40. Which HTML tag is essential for making a webpage responsive?
+                </p>
                 <label class="block">
-                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport"
+                    content="width=device-width, initial-scale=1"&gt;
                 </label>
                 <label class="block">
                     <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;title&gt;
@@ -562,7 +611,8 @@
 
             <!-- Question: HTML Multimedia -->
             <div class="question">
-                <p class="font-medium text-gray-800">42. Which tag is used for embedding multimedia content, such as a video or audio, in HTML?</p>
+                <p class="font-medium text-gray-800">42. Which tag is used for embedding multimedia content, such as a
+                    video or audio, in HTML?</p>
                 <label class="block">
                     <input type="radio" name="q28" value="correct" class="mr-2"> &lt;embed&gt;
                 </label>
@@ -603,7 +653,8 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="button" onclick="calculateScore()" class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Submit</button>
+            <button type="button" onclick="calculateScore()"
+                class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Submit</button>
         </form>
 
         <!-- Result Display -->
@@ -613,6 +664,36 @@
     </div>
 
     <script>
+        let timerInterval;
+
+        function startQuiz() {
+            // Hide the start button and show the quiz form
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('examForm').style.display = 'block';
+
+            // Set the timer (60 minutes)
+            let time = 60 * 60; // 60 minutes in seconds
+
+            // Start the timer
+            timerInterval = setInterval(function () {
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+
+                // Display the timer
+                document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+                // Decrease time by one second
+                time--;
+
+                // If time runs out, end the quiz
+                if (time < 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up!');
+                    calculateScore(); // Optionally auto-submit the quiz
+                }
+            }, 1000);
+        }
+
         function calculateScore() {
             // Get the student's name
             const studentName = document.getElementById('studentName').value.trim();
@@ -718,17 +799,17 @@
             const blockTag = document.querySelector('input[name="blockTag"]:checked');
             if (blockTag && blockTag.value === 'correct') score += 1;
             // Check answer for layout tag question
-             // Check answer for input type question
-             const inputType = document.querySelector('input[name="inputType"]:checked');
+            // Check answer for input type question
+            const inputType = document.querySelector('input[name="inputType"]:checked');
             if (inputType && inputType.value === 'correct') score += 1;
-              // Check answer for id attribute question
-              const idAttribute = document.querySelector('input[name="idAttribute"]:checked');
+            // Check answer for id attribute question
+            const idAttribute = document.querySelector('input[name="idAttribute"]:checked');
             if (idAttribute && idAttribute.value === 'correct') score += 1;
 
             // Check answer for class attribute question
             const classAttribute = document.querySelector('input[name="classAttribute"]:checked');
             if (classAttribute && classAttribute.value === 'correct') score += 1;
-            
+
             // Check answer for responsive design question
             const responsiveDesign = document.querySelector('input[name="responsiveDesign"]:checked');
             if (responsiveDesign && responsiveDesign.value === 'correct') score += 1;
@@ -763,4 +844,5 @@
         }
     </script>
 </body>
+
 </html>
