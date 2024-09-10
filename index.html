@@ -129,6 +129,119 @@
                 <input type="text" name="q10" placeholder="Example:" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
+            <div class="question">
+                <p class="font-medium text-gray-800">Which of the following is an inline HTML tag?</p>
+                <label class="block">
+                    <input type="radio" name="inlineTag" value="incorrect" class="mr-2"> &lt;div&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="inlineTag" value="incorrect" class="mr-2"> &lt;section&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="inlineTag" value="correct" class="mr-2"> &lt;span&gt;
+                </label>
+            </div>
+
+            <!-- Question: HTML Block Tags -->
+            <div class="question">
+                <p class="font-medium text-gray-800">Which of the following is a block-level HTML tag?</p>
+                <label class="block">
+                    <input type="radio" name="blockTag" value="correct" class="mr-2"> &lt;div&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="blockTag" value="incorrect" class="mr-2"> &lt;span&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="blockTag" value="incorrect" class="mr-2"> &lt;a&gt;
+                </label>
+            </div>
+             <!-- Question: HTML Layout Tags -->
+             <div class="question">
+                <p class="font-medium text-gray-800">Which of the following tags is commonly used for layout purposes in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;section&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;b&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;em&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;mark&gt;
+                </label>
+            </div>
+            <!-- Question: HTML Input Types -->
+            <div class="question">
+                <p class="font-medium text-gray-800">Which input type is used for entering a numeric value in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="text"
+                </label>
+                <label class="block">
+                    <input type="radio" name="inputType" value="correct" class="mr-2"> type="number"
+                </label>
+                <label class="block">
+                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="email"
+                </label>
+                <label class="block">
+                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="password"
+                </label>
+            </div>
+              <!-- Question: HTML id Attribute -->
+              <div class="question">
+                <p class="font-medium text-gray-800">What is the purpose of the <code>id</code> attribute in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="idAttribute" value="correct" class="mr-2"> To uniquely identify an element within the document
+                </label>
+                <label class="block">
+                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To style multiple elements at once
+                </label>
+                <label class="block">
+                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To create a link to another page
+                </label>
+            </div>
+
+            <!-- Question: HTML class Attribute -->
+            <div class="question">
+                <p class="font-medium text-gray-800">What is the purpose of the <code>class</code> attribute in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To uniquely identify an element within the document
+                </label>
+                <label class="block">
+                    <input type="radio" name="classAttribute" value="correct" class="mr-2"> To apply CSS styles to multiple elements
+                </label>
+                <label class="block">
+                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To set the default language of the document
+                </label>
+            </div>
+
+             <!-- Question: HTML Responsive Design -->
+             <div class="question">
+                <p class="font-medium text-gray-800">Which HTML element is used to ensure a webpage is responsive on different devices?</p>
+                <label class="block">
+                    <input type="radio" name="responsiveDesign" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;meta charset="UTF-8"&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;link rel="stylesheet" href="styles.css"&gt;
+                </label>
+            </div>
+
+            <!-- Question: HTML Layout Elements -->
+            <div class="question">
+                <p class="font-medium text-gray-800">Which of the following tags is commonly used for layout structuring in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;header&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;strong&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;abbr&gt;
+                </label>
+            </div>
             <!-- Question: HTML Links -->
             <div class="question">
                 <p class="font-medium text-gray-800">11. Which attribute is used to specify the URL for a link in HTML?</p>
@@ -598,6 +711,31 @@
 
             const q30 = document.querySelector('input[name="q30"]:checked');
             if (q30 && q30.value === 'correct') score += 1;
+
+            const inlineTag = document.querySelector('input[name="inlineTag"]:checked');
+            if (inlineTag && inlineTag.value === 'correct') score += 1;
+
+            const blockTag = document.querySelector('input[name="blockTag"]:checked');
+            if (blockTag && blockTag.value === 'correct') score += 1;
+            // Check answer for layout tag question
+             // Check answer for input type question
+             const inputType = document.querySelector('input[name="inputType"]:checked');
+            if (inputType && inputType.value === 'correct') score += 1;
+              // Check answer for id attribute question
+              const idAttribute = document.querySelector('input[name="idAttribute"]:checked');
+            if (idAttribute && idAttribute.value === 'correct') score += 1;
+
+            // Check answer for class attribute question
+            const classAttribute = document.querySelector('input[name="classAttribute"]:checked');
+            if (classAttribute && classAttribute.value === 'correct') score += 1;
+            
+            // Check answer for responsive design question
+            const responsiveDesign = document.querySelector('input[name="responsiveDesign"]:checked');
+            if (responsiveDesign && responsiveDesign.value === 'correct') score += 1;
+
+            // Check answer for layout tag question
+            const layoutTag = document.querySelector('input[name="layoutTag"]:checked');
+            if (layoutTag && layoutTag.value === 'correct') score += 1;
 
             // Calculate percentage
             const percentage = (score / totalQuestions) * 100;
