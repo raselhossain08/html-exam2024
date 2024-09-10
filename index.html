@@ -13,16 +13,17 @@
 <body class="bg-gray-100 p-6">
     <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-2xl font-bold mb-6 text-center">HTML Exam</h1>
-        <form id="examForm" class="space-y-4">
+        <form id="examForm" class="space-y-4" oninput="validateForm()">
             <div class="mb-4 text-center">
                 <span id="timer" class="text-xl font-semibold text-red-600">60:00</span>
             </div>
 
             <!-- Start Button -->
-            <button id="startButton" onclick="startQuiz()"
+            <button id="startButton" type="button" onclick="startQuiz()"
                 class="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
                 Start
             </button>
+
             <!-- Student Information -->
             <div class="mb-4">
                 <label for="studentName" class="block text-gray-700 font-medium">Name:</label>
@@ -30,9 +31,7 @@
                     class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
-            <!-- Previous Questions Here... -->
-            <!-- Additional Questions Based on Your Request -->
-            <!-- Question 1: What is HTML? -->
+            <!-- Questions -->
             <div class="question">
                 <p class="font-medium text-gray-800">1. What is HTML?</p>
                 <label class="block">
@@ -47,7 +46,6 @@
                 </label>
             </div>
 
-            <!-- Question 2: HTML Elements -->
             <div class="question">
                 <p class="font-medium text-gray-800">2. Which of the following is an HTML element?</p>
                 <label class="block">
@@ -61,7 +59,6 @@
                 </label>
             </div>
 
-            <!-- Question 3: HTML Attributes -->
             <div class="question">
                 <p class="font-medium text-gray-800">3. What are HTML attributes used for?</p>
                 <label class="block">
@@ -78,7 +75,6 @@
                 </label>
             </div>
 
-            <!-- Question 4: HTML Headings -->
             <div class="question">
                 <p class="font-medium text-gray-800">4. How many heading levels are available in HTML?</p>
                 <label class="block">
@@ -92,7 +88,6 @@
                 </label>
             </div>
 
-            <!-- Question 5: HTML Paragraphs -->
             <div class="question">
                 <p class="font-medium text-gray-800">5. Which tag is used for creating a paragraph in HTML?</p>
                 <input type="text" name="q5" placeholder="Example" required
@@ -100,561 +95,418 @@
             </div>
 
             <div class="question">
-                <p class="font-medium text-gray-800">7. How do you apply inline styles in HTML?</p>
+                <p class="font-medium text-gray-800">6. How do you apply inline styles in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q7" value="correct" class="mr-2"> Using the <code>style</code> attribute
+                    <input type="radio" name="q6" value="correct" class="mr-2"> Using the <code>style</code> attribute
                 </label>
                 <label class="block">
-                    <input type="radio" name="q7" value="incorrect" class="mr-2"> Using the <code>class</code> attribute
+                    <input type="radio" name="q6" value="incorrect" class="mr-2"> Using the <code>class</code> attribute
                 </label>
                 <label class="block">
-                    <input type="radio" name="q7" value="incorrect" class="mr-2"> Using the <code>link</code> element
-                </label>
-            </div>
-
-            <!-- Question: HTML Text Formatting -->
-            <div class="question">
-                <p class="font-medium text-gray-800">8. Which tag is used to make text bold in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q8" value="correct" class="mr-2"> &lt;b&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q8" value="incorrect" class="mr-2"> &lt;strong&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q8" value="incorrect" class="mr-2"> &lt;i&gt;
+                    <input type="radio" name="q6" value="incorrect" class="mr-2"> Using the <code>link</code> element
                 </label>
             </div>
 
-            <!-- Question: HTML Quotation and Citation Elements -->
             <div class="question">
-                <p class="font-medium text-gray-800">9. Which HTML tag is used for a blockquote?</p>
+                <p class="font-medium text-gray-800">7. Which tag is used to make text bold in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q9" value="correct" class="mr-2"> &lt;blockquote&gt;
+                    <input type="radio" name="q7" value="correct" class="mr-2"> &lt;b&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q9" value="incorrect" class="mr-2"> &lt;q&gt;
+                    <input type="radio" name="q7" value="incorrect" class="mr-2"> &lt;strong&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q9" value="incorrect" class="mr-2"> &lt;cite&gt;
+                    <input type="radio" name="q7" value="incorrect" class="mr-2"> &lt;i&gt;
                 </label>
             </div>
 
-            <!-- Question: HTML Comments -->
             <div class="question">
-                <p class="font-medium text-gray-800">10. How do you write a comment in HTML?</p>
-                <input type="text" name="q10" placeholder="Example:" required
+                <p class="font-medium text-gray-800">8. Which HTML tag is used for a blockquote?</p>
+                <label class="block">
+                    <input type="radio" name="q8" value="correct" class="mr-2"> &lt;blockquote&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q8" value="incorrect" class="mr-2"> &lt;q&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q8" value="incorrect" class="mr-2"> &lt;cite&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">9. How do you write a comment in HTML?</p>
+                <input type="text" name="q9" placeholder="Example:" required
                     class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="question">
-                <p class="font-medium text-gray-800">11. Which of the following is an inline HTML tag?</p>
+                <p class="font-medium text-gray-800">10. Which of the following is an inline HTML tag?</p>
                 <label class="block">
-                    <input type="radio" name="inlineTag" value="incorrect" class="mr-2"> &lt;div&gt;
+                    <input type="radio" name="q10" value="incorrect" class="mr-2"> &lt;div&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="inlineTag" value="incorrect" class="mr-2"> &lt;section&gt;
+                    <input type="radio" name="q10" value="incorrect" class="mr-2"> &lt;section&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="inlineTag" value="correct" class="mr-2"> &lt;span&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Block Tags -->
-            <div class="question">
-                <p class="font-medium text-gray-800">12. Which of the following is a block-level HTML tag?</p>
-                <label class="block">
-                    <input type="radio" name="blockTag" value="correct" class="mr-2"> &lt;div&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="blockTag" value="incorrect" class="mr-2"> &lt;span&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="blockTag" value="incorrect" class="mr-2"> &lt;a&gt;
-                </label>
-            </div>
-            <!-- Question: HTML Layout Tags -->
-            <div class="question">
-                <p class="font-medium text-gray-800">13. Which of the following tags is commonly used for layout
-                    purposes in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;section&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;b&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;em&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;mark&gt;
-                </label>
-            </div>
-            <!-- Question: HTML Input Types -->
-            <div class="question">
-                <p class="font-medium text-gray-800">14. Which input type is used for entering a numeric value in HTML?
-                </p>
-                <label class="block">
-                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="text"
-                </label>
-                <label class="block">
-                    <input type="radio" name="inputType" value="correct" class="mr-2"> type="number"
-                </label>
-                <label class="block">
-                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="email"
-                </label>
-                <label class="block">
-                    <input type="radio" name="inputType" value="incorrect" class="mr-2"> type="password"
-                </label>
-            </div>
-            <!-- Question: HTML id Attribute -->
-            <div class="question">
-                <p class="font-medium text-gray-800">15. What is the purpose of the <code>id</code> attribute in HTML?
-                </p>
-                <label class="block">
-                    <input type="radio" name="idAttribute" value="correct" class="mr-2"> To uniquely identify an element
-                    within the document
-                </label>
-                <label class="block">
-                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To style multiple elements at
-                    once
-                </label>
-                <label class="block">
-                    <input type="radio" name="idAttribute" value="incorrect" class="mr-2"> To create a link to another
-                    page
+                    <input type="radio" name="q10" value="correct" class="mr-2"> &lt;span&gt;
                 </label>
             </div>
 
-            <!-- Question: HTML class Attribute -->
             <div class="question">
-                <p class="font-medium text-gray-800">16. What is the purpose of the <code>class</code> attribute in
-                    HTML?</p>
+                <p class="font-medium text-gray-800">11. Which input type is used for entering a numeric value in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To uniquely identify an
-                    element within the document
+                    <input type="radio" name="q11" value="correct" class="mr-2"> type="number"
                 </label>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="correct" class="mr-2"> To apply CSS styles to
-                    multiple elements
+                    <input type="radio" name="q11" value="incorrect" class="mr-2"> type="text"
                 </label>
                 <label class="block">
-                    <input type="radio" name="classAttribute" value="incorrect" class="mr-2"> To set the default
-                    language of the document
-                </label>
-            </div>
-
-            <!-- Question: HTML Responsive Design -->
-            <div class="question">
-                <p class="font-medium text-gray-800">17. Which HTML element is used to ensure a webpage is responsive on
-                    different devices?</p>
-                <label class="block">
-                    <input type="radio" name="responsiveDesign" value="correct" class="mr-2"> &lt;meta name="viewport"
-                    content="width=device-width, initial-scale=1"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;meta
-                    charset="UTF-8"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="responsiveDesign" value="incorrect" class="mr-2"> &lt;link
-                    rel="stylesheet" href="styles.css"&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Layout Elements -->
-            <div class="question">
-                <p class="font-medium text-gray-800">18. Which of the following tags is commonly used for layout
-                    structuring in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="correct" class="mr-2"> &lt;header&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;strong&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="layoutTag" value="incorrect" class="mr-2"> &lt;abbr&gt;
-                </label>
-            </div>
-            <!-- Question: HTML Links -->
-            <div class="question">
-                <p class="font-medium text-gray-800">19. Which attribute is used to specify the URL for a link in HTML?
-                </p>
-                <label class="block">
-                    <input type="radio" name="q11" value="correct" class="mr-2"> href
-                </label>
-                <label class="block">
-                    <input type="radio" name="q11" value="incorrect" class="mr-2"> src
-                </label>
-                <label class="block">
-                    <input type="radio" name="q11" value="incorrect" class="mr-2"> link
-                </label>
-            </div>
-
-            <!-- Question: HTML Images -->
-            <div class="question">
-                <p class="font-medium text-gray-800">20. What attribute is used to specify the path of an image in HTML?
-                </p>
-                <label class="block">
-                    <input type="radio" name="q12" value="correct" class="mr-2"> src
-                </label>
-                <label class="block">
-                    <input type="radio" name="q12" value="incorrect" class="mr-2"> href
-                </label>
-                <label class="block">
-                    <input type="radio" name="q12" value="incorrect" class="mr-2"> link
-                </label>
-            </div>
-
-            <!-- Question: HTML Favicon -->
-            <div class="question">
-                <p class="font-medium text-gray-800">21. How do you specify a favicon for a webpage?</p>
-                <label class="block">
-                    <input type="radio" name="q13" value="correct" class="mr-2"> &lt;link rel="icon"
-                    href="favicon.ico"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q13" value="incorrect" class="mr-2"> &lt;icon src="favicon.ico"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q13" value="incorrect" class="mr-2"> &lt;link href="favicon.ico"&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Layout Elements and Techniques -->
-            <div class="question">
-                <p class="font-medium text-gray-800">22. Which HTML element is used for layout purposes?</p>
-                <label class="block">
-                    <input type="radio" name="q25" value="correct" class="mr-2"> &lt;section&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q25" value="incorrect" class="mr-2"> &lt;b&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q25" value="incorrect" class="mr-2"> &lt;em&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Responsive Web Design -->
-            <div class="question">
-                <p class="font-medium text-gray-800">23. Which HTML tag is essential for making a webpage responsive?
-                </p>
-                <label class="block">
-                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport"
-                    content="width=device-width, initial-scale=1"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;title&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;footer&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Forms -->
-            <div class="question">
-                <p class="font-medium text-gray-800">24. Which tag is used to create a form in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q27" value="correct" class="mr-2"> &lt;form&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;input&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;button&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Multimedia -->
-            <div class="question">
-                <p class="font-medium text-gray-800">25. Which tag is used for embedding multimedia content, such as a
-                    video or audio, in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q28" value="correct" class="mr-2"> &lt;embed&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q28" value="incorrect" class="mr-2"> &lt;img&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q28" value="incorrect" class="mr-2"> &lt;table&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Video -->
-            <div class="question">
-                <p class="font-medium text-gray-800">26. How do you add a video to a webpage in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q29" value="correct" class="mr-2"> Using the &lt;video&gt; tag
-                </label>
-                <label class="block">
-                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Using the &lt;audio&gt; tag
-                </label>
-                <label class="block">
-                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Using the &lt;picture&gt; tag
-                </label>
-            </div>
-            <div class="question">
-                <p class="font-medium text-gray-800">27. Where do you set the title of an HTML page?</p>
-                <label class="block">
-                    <input type="radio" name="q14" value="correct" class="mr-2"> Inside the &lt;title&gt; tag within the
-                    &lt;head&gt; section
-                </label>
-                <label class="block">
-                    <input type="radio" name="q14" value="incorrect" class="mr-2"> Inside the &lt;body&gt; section
-                </label>
-                <label class="block">
-                    <input type="radio" name="q14" value="incorrect" class="mr-2"> Inside the &lt;footer&gt; section
-                </label>
-            </div>
-
-            <!-- Question: HTML Tables -->
-            <div class="question">
-                <p class="font-medium text-gray-800">28. Which tags are used to create a table in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q15" value="correct" class="mr-2"> &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q15" value="incorrect" class="mr-2"> &lt;ul&gt;, &lt;li&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q15" value="incorrect" class="mr-2"> &lt;div&gt;, &lt;span&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Lists -->
-            <div class="question">
-                <p class="font-medium text-gray-800">29. Which tag is used to create an ordered list?</p>
-                <label class="block">
-                    <input type="radio" name="q16" value="correct" class="mr-2"> &lt;ol&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q16" value="incorrect" class="mr-2"> &lt;ul&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q16" value="incorrect" class="mr-2"> &lt;li&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Block and Inline Elements -->
-            <div class="question">
-                <p class="font-medium text-gray-800">30. Which of these is a block-level element?</p>
-                <label class="block">
-                    <input type="radio" name="q17" value="correct" class="mr-2"> &lt;div&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q17" value="incorrect" class="mr-2"> &lt;span&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q17" value="incorrect" class="mr-2"> &lt;a&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Div Element -->
-            <div class="question">
-                <p class="font-medium text-gray-800">31. What is the purpose of a &lt;div&gt; element?</p>
-                <label class="block">
-                    <input type="radio" name="q18" value="correct" class="mr-2"> To divide content into sections or
-                    containers
-                </label>
-                <label class="block">
-                    <input type="radio" name="q18" value="incorrect" class="mr-2"> To create a hyperlink
-                </label>
-                <label class="block">
-                    <input type="radio" name="q18" value="incorrect" class="mr-2"> To display inline text
-                </label>
-            </div>
-
-            <!-- Question: HTML class Attribute -->
-            <div class="question">
-                <p class="font-medium text-gray-800">32. What is the purpose of the class attribute in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q19" value="correct" class="mr-2"> To apply CSS styles to elements
-                </label>
-                <label class="block">
-                    <input type="radio" name="q19" value="incorrect" class="mr-2"> To create JavaScript variables
-                </label>
-                <label class="block">
-                    <input type="radio" name="q19" value="incorrect" class="mr-2"> To store data in a database
-                </label>
-            </div>
-
-            <!-- Question: HTML id Attribute -->
-            <div class="question">
-                <p class="font-medium text-gray-800">33. What is unique about the id attribute in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q20" value="correct" class="mr-2"> It must be unique within the HTML
-                    document
-                </label>
-                <label class="block">
-                    <input type="radio" name="q20" value="incorrect" class="mr-2"> It can be repeated multiple times
-                </label>
-                <label class="block">
-                    <input type="radio" name="q20" value="incorrect" class="mr-2"> It can only be used in &lt;div&gt;
-                    elements
-                </label>
-            </div>
-
-            <!-- Question: HTML Iframes -->
-            <div class="question">
-                <p class="font-medium text-gray-800">34. What is the purpose of an &lt;iframe&gt; in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q21" value="correct" class="mr-2"> To embed another HTML document within
-                    the current document
-                </label>
-                <label class="block">
-                    <input type="radio" name="q21" value="incorrect" class="mr-2"> To create a form
-                </label>
-                <label class="block">
-                    <input type="radio" name="q21" value="incorrect" class="mr-2"> To display images
-                </label>
-            </div>
-
-            <!-- Question: HTML JavaScript -->
-            <div class="question">
-                <p class="font-medium text-gray-800">35. How do you include JavaScript in an HTML document?</p>
-                <label class="block">
-                    <input type="radio" name="q22" value="correct" class="mr-2"> Using the &lt;script&gt; tag
-                </label>
-                <label class="block">
-                    <input type="radio" name="q22" value="incorrect" class="mr-2"> Using the &lt;link&gt; tag
-                </label>
-                <label class="block">
-                    <input type="radio" name="q22" value="incorrect" class="mr-2"> Using the &lt;meta&gt; tag
-                </label>
-            </div>
-
-            <!-- Question: HTML File Paths -->
-            <div class="question">
-                <p class="font-medium text-gray-800">36. Which is an example of a relative file path?</p>
-                <label class="block">
-                    <input type="radio" name="q23" value="correct" class="mr-2"> images/photo.jpg
-                </label>
-                <label class="block">
-                    <input type="radio" name="q23" value="incorrect" class="mr-2"> https://example.com/photo.jpg
-                </label>
-                <label class="block">
-                    <input type="radio" name="q23" value="incorrect" class="mr-2"> C:/Users/Photos/photo.jpg
-                </label>
-            </div>
-
-            <!-- Question: HTML - The Head Element -->
-            <div class="question">
-                <p class="font-medium text-gray-800">37. What is the purpose of the &lt;head&gt; element in HTML?</p>
-                <label class="block">
-                    <input type="radio" name="q24" value="correct" class="mr-2"> To contain meta-information, links to
-                    stylesheets, and the document title
-                </label>
-                <label class="block">
-                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To display the main content of the
-                    page
-                </label>
-                <label class="block">
-                    <input type="radio" name="q24" value="incorrect" class="mr-2"> To create headers within the page
-                    body
-                </label>
-            </div>
-            <!-- Question: HTML Audio -->
-            <div class="question">
-                <p class="font-medium text-gray-800">38. Which tag is used to embed audio files in an HTML document?</p>
-                <label class="block">
-                    <input type="radio" name="q30" value="correct" class="mr-2"> &lt;audio&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;video&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;track&gt;
+                    <input type="radio" name="q11" value="incorrect" class="mr-2"> type="email"
                 </label>
             </div>
 
             <div class="question">
-                <p class="font-medium text-gray-800">39. Which HTML element is used for layout purposes?</p>
+                <p class="font-medium text-gray-800">12. What is the purpose of the <code>id</code> attribute in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q25" value="correct" class="mr-2"> &lt;section&gt;
+                    <input type="radio" name="q12" value="correct" class="mr-2"> To uniquely identify an element within the document
                 </label>
                 <label class="block">
-                    <input type="radio" name="q25" value="incorrect" class="mr-2"> &lt;b&gt;
+                    <input type="radio" name="q12" value="incorrect" class="mr-2"> To style multiple elements at once
                 </label>
                 <label class="block">
-                    <input type="radio" name="q25" value="incorrect" class="mr-2"> &lt;em&gt;
-                </label>
-            </div>
-
-            <!-- Question: HTML Responsive Web Design -->
-            <div class="question">
-                <p class="font-medium text-gray-800">40. Which HTML tag is essential for making a webpage responsive?
-                </p>
-                <label class="block">
-                    <input type="radio" name="q26" value="correct" class="mr-2"> &lt;meta name="viewport"
-                    content="width=device-width, initial-scale=1"&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;title&gt;
-                </label>
-                <label class="block">
-                    <input type="radio" name="q26" value="incorrect" class="mr-2"> &lt;footer&gt;
+                    <input type="radio" name="q12" value="incorrect" class="mr-2"> To create a link to another page
                 </label>
             </div>
 
-            <!-- Question: HTML Forms -->
             <div class="question">
-                <p class="font-medium text-gray-800">41. Which tag is used to create a form in HTML?</p>
+                <p class="font-medium text-gray-800">13. What is the purpose of the <code>class</code> attribute in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q27" value="correct" class="mr-2"> &lt;form&gt;
+                    <input type="radio" name="q13" value="incorrect" class="mr-2"> To uniquely identify an element within the document
                 </label>
                 <label class="block">
-                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;input&gt;
+                    <input type="radio" name="q13" value="correct" class="mr-2"> To apply CSS styles to multiple elements
                 </label>
                 <label class="block">
-                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;button&gt;
+                    <input type="radio" name="q13" value="incorrect" class="mr-2"> To set the default language of the document
                 </label>
             </div>
 
-            <!-- Question: HTML Multimedia -->
             <div class="question">
-                <p class="font-medium text-gray-800">42. Which tag is used for embedding multimedia content, such as a
-                    video or audio, in HTML?</p>
+                <p class="font-medium text-gray-800">14. Which HTML element is used to ensure a webpage is responsive on different devices?</p>
                 <label class="block">
-                    <input type="radio" name="q28" value="correct" class="mr-2"> &lt;embed&gt;
+                    <input type="radio" name="q14" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q28" value="incorrect" class="mr-2"> &lt;img&gt;
+                    <input type="radio" name="q14" value="incorrect" class="mr-2"> &lt;meta charset="UTF-8"&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q28" value="incorrect" class="mr-2"> &lt;table&gt;
+                    <input type="radio" name="q14" value="incorrect" class="mr-2"> &lt;link rel="stylesheet" href="styles.css"&gt;
                 </label>
             </div>
 
-            <!-- Question: HTML Video -->
             <div class="question">
-                <p class="font-medium text-gray-800">43. How do you add a video to a webpage in HTML?</p>
+                <p class="font-medium text-gray-800">15. Which of the following tags is commonly used for layout purposes in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q29" value="correct" class="mr-2"> Using the &lt;video&gt; tag
+                    <input type="radio" name="q15" value="correct" class="mr-2"> &lt;section&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Using the &lt;audio&gt; tag
+                    <input type="radio" name="q15" value="incorrect" class="mr-2"> &lt;b&gt;
                 </label>
                 <label class="block">
-                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Using the &lt;picture&gt; tag
+                    <input type="radio" name="q15" value="incorrect" class="mr-2"> &lt;em&gt;
                 </label>
             </div>
 
-            <!-- Question: HTML Audio -->
             <div class="question">
-                <p class="font-medium text-gray-800">44. Which tag is used to embed audio files in an HTML document?</p>
+                <p class="font-medium text-gray-800">16. Which attribute is used to specify the URL for a link in HTML?</p>
                 <label class="block">
-                    <input type="radio" name="q30" value="correct" class="mr-2"> &lt;audio&gt;
+                    <input type="radio" name="q16" value="correct" class="mr-2"> href
                 </label>
                 <label class="block">
-                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;video&gt;
+                    <input type="radio" name="q16" value="incorrect" class="mr-2"> src
                 </label>
                 <label class="block">
-                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;track&gt;
+                    <input type="radio" name="q16" value="incorrect" class="mr-2"> link
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">17. Which tag is used to embed audio files in an HTML document?</p>
+                <label class="block">
+                    <input type="radio" name="q17" value="correct" class="mr-2"> &lt;audio&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q17" value="incorrect" class="mr-2"> &lt;video&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q17" value="incorrect" class="mr-2"> &lt;track&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">18. Which tags are used to create a table in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q18" value="correct" class="mr-2"> &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q18" value="incorrect" class="mr-2"> &lt;ul&gt;, &lt;li&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q18" value="incorrect" class="mr-2"> &lt;div&gt;, &lt;span&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">19. Which tag is used to create an ordered list?</p>
+                <label class="block">
+                    <input type="radio" name="q19" value="correct" class="mr-2"> &lt;ol&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q19" value="incorrect" class="mr-2"> &lt;ul&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q19" value="incorrect" class="mr-2"> &lt;li&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">20. Which of these is a block-level element?</p>
+                <label class="block">
+                    <input type="radio" name="q20" value="correct" class="mr-2"> &lt;div&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q20" value="incorrect" class="mr-2"> &lt;span&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q20" value="incorrect" class="mr-2"> &lt;a&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">21. What is the purpose of a &lt;div&gt; element?</p>
+                <label class="block">
+                    <input type="radio" name="q21" value="correct" class="mr-2"> To divide content into sections or containers
+                </label>
+                <label class="block">
+                    <input type="radio" name="q21" value="incorrect" class="mr-2"> To create a hyperlink
+                </label>
+                <label class="block">
+                    <input type="radio" name="q21" value="incorrect" class="mr-2"> To display inline text
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">22. What is unique about the id attribute in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q22" value="correct" class="mr-2"> It must be unique within the HTML document
+                </label>
+                <label class="block">
+                    <input type="radio" name="q22" value="incorrect" class="mr-2"> It can be repeated multiple times
+                </label>
+                <label class="block">
+                    <input type="radio" name="q22" value="incorrect" class="mr-2"> It can only be used in &lt;div&gt; elements
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">23. What is the purpose of an &lt;iframe&gt; in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q23" value="correct" class="mr-2"> To embed another HTML document within the current document
+                </label>
+                <label class="block">
+                    <input type="radio" name="q23" value="incorrect" class="mr-2"> To create a form
+                </label>
+                <label class="block">
+                    <input type="radio" name="q23" value="incorrect" class="mr-2"> To display images
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">24. How do you include JavaScript in an HTML document?</p>
+                <label class="block">
+                    <input type="radio" name="q24" value="correct" class="mr-2"> Using the &lt;script&gt; tag
+                </label>
+                <label class="block">
+                    <input type="radio" name="q24" value="incorrect" class="mr-2"> Using the &lt;link&gt; tag
+                </label>
+                <label class="block">
+                    <input type="radio" name="q24" value="incorrect" class="mr-2"> Using the &lt;meta&gt; tag
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">25. Which is an example of a relative file path?</p>
+                <label class="block">
+                    <input type="radio" name="q25" value="correct" class="mr-2"> images/photo.jpg
+                </label>
+                <label class="block">
+                    <input type="radio" name="q25" value="incorrect" class="mr-2"> https://example.com/photo.jpg
+                </label>
+                <label class="block">
+                    <input type="radio" name="q25" value="incorrect" class="mr-2"> C:/Users/Photos/photo.jpg
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">26. What is the purpose of the &lt;head&gt; element in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q26" value="correct" class="mr-2"> To contain meta-information, links to stylesheets, and the document title
+                </label>
+                <label class="block">
+                    <input type="radio" name="q26" value="incorrect" class="mr-2"> To display the main content of the page
+                </label>
+                <label class="block">
+                    <input type="radio" name="q26" value="incorrect" class="mr-2"> To create headers within the page body
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">27. Which tag is used for embedding multimedia content, such as a video or audio, in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q27" value="correct" class="mr-2"> &lt;embed&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;img&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q27" value="incorrect" class="mr-2"> &lt;table&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">28. How do you add a video to a webpage in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q28" value="correct" class="mr-2"> Using the &lt;video&gt; tag
+                </label>
+                <label class="block">
+                    <input type="radio" name="q28" value="incorrect" class="mr-2"> Using the &lt;audio&gt; tag
+                </label>
+                <label class="block">
+                    <input type="radio" name="q28" value="incorrect" class="mr-2"> Using the &lt;picture&gt; tag
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">29. Where do you set the title of an HTML page?</p>
+                <label class="block">
+                    <input type="radio" name="q29" value="correct" class="mr-2"> Inside the &lt;title&gt; tag within the &lt;head&gt; section
+                </label>
+                <label class="block">
+                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Inside the &lt;body&gt; section
+                </label>
+                <label class="block">
+                    <input type="radio" name="q29" value="incorrect" class="mr-2"> Inside the &lt;footer&gt; section
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">30. Which HTML element is essential for making a webpage responsive?</p>
+                <label class="block">
+                    <input type="radio" name="q30" value="correct" class="mr-2"> &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;title&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q30" value="incorrect" class="mr-2"> &lt;footer&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">31. Which tag is used to create a form in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q31" value="correct" class="mr-2"> &lt;form&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q31" value="incorrect" class="mr-2"> &lt;input&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q31" value="incorrect" class="mr-2"> &lt;button&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">32. What is the purpose of the <code>alt</code> attribute in the &lt;img&gt; tag?</p>
+                <label class="block">
+                    <input type="radio" name="q32" value="correct" class="mr-2"> To provide alternative text if the image cannot be displayed
+                </label>
+                <label class="block">
+                    <input type="radio" name="q32" value="incorrect" class="mr-2"> To set the alignment of the image
+                </label>
+                <label class="block">
+                    <input type="radio" name="q32" value="incorrect" class="mr-2"> To provide a link for the image
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">33. Which of the following is used to create a checkbox in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q33" value="correct" class="mr-2"> &lt;input type="checkbox"&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q33" value="incorrect" class="mr-2"> &lt;input type="radio"&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q33" value="incorrect" class="mr-2"> &lt;input type="button"&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">34. How do you create a hyperlink in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q34" value="correct" class="mr-2"> &lt;a href="url"&gt;link&lt;/a&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q34" value="incorrect" class="mr-2"> &lt;link href="url"&gt;link&lt;/link&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q34" value="incorrect" class="mr-2"> &lt;url&gt;link&lt;/url&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">35. Which tag is used to display a horizontal line in HTML?</p>
+                <label class="block">
+                    <input type="radio" name="q35" value="correct" class="mr-2"> &lt;hr&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q35" value="incorrect" class="mr-2"> &lt;br&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q35" value="incorrect" class="mr-2"> &lt;line&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">36. Which HTML tag is used to define an unordered list?</p>
+                <label class="block">
+                    <input type="radio" name="q36" value="correct" class="mr-2"> &lt;ul&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q36" value="incorrect" class="mr-2"> &lt;ol&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q36" value="incorrect" class="mr-2"> &lt;li&gt;
+                </label>
+            </div>
+
+            <div class="question">
+                <p class="font-medium text-gray-800">37. Which HTML element is used for creating a drop-down list?</p>
+                <label class="block">
+                    <input type="radio" name="q37" value="correct" class="mr-2"> &lt;select&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q37" value="incorrect" class="mr-2"> &lt;option&gt;
+                </label>
+                <label class="block">
+                    <input type="radio" name="q37" value="incorrect" class="mr-2"> &lt;dropdown&gt;
                 </label>
             </div>
 
             <!-- Submit Button -->
-            <button type="button" onclick="calculateScore()"
-                class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Submit</button>
+            <button type="button" id="submitButton" onclick="calculateScore()"
+                class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                disabled>Submit</button>
         </form>
 
         <!-- Result Display -->
@@ -694,13 +546,40 @@
             }, 1000);
         }
 
+        function validateForm() {
+            // Check if the student's name is filled
+            const studentName = document.getElementById('studentName').value.trim();
+
+            // Check if all questions have been answered
+            const questions = document.querySelectorAll('.question');
+            let allAnswered = true;
+
+            questions.forEach((question) => {
+                const radios = question.querySelectorAll('input[type="radio"]');
+                const textInput = question.querySelector('input[type="text"]');
+                if (radios.length > 0) {
+                    // Check if at least one radio is checked
+                    const checkedRadio = Array.from(radios).some(radio => radio.checked);
+                    if (!checkedRadio) allAnswered = false;
+                }
+                if (textInput && !textInput.value.trim()) {
+                    // Check if text input is filled
+                    allAnswered = false;
+                }
+            });
+
+            // Enable or disable the submit button
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = !(studentName && allAnswered);
+        }
+
         function calculateScore() {
             // Get the student's name
             const studentName = document.getElementById('studentName').value.trim();
 
             // Initialize score
             let score = 0;
-            const totalQuestions = 30;
+            const totalQuestions = 37;
 
             // Check answers for each question
             const q1 = document.querySelector('input[name="q1"]:checked');
@@ -727,11 +606,11 @@
             const q8 = document.querySelector('input[name="q8"]:checked');
             if (q8 && q8.value === 'correct') score += 1;
 
-            const q9 = document.querySelector('input[name="q9"]:checked');
-            if (q9 && q9.value === 'correct') score += 1;
+            const q9 = document.querySelector('input[name="q9"]').value.trim();
+            if (q9.toLowerCase() === '<!-- comment -->') score += 1;
 
-            const q10 = document.querySelector('input[name="q10"]').value.trim();
-            if (q10.toLowerCase() === '<!-- comment -->') score += 1;
+            const q10 = document.querySelector('input[name="q10"]:checked');
+            if (q10 && q10.value === 'correct') score += 1;
 
             const q11 = document.querySelector('input[name="q11"]:checked');
             if (q11 && q11.value === 'correct') score += 1;
@@ -793,30 +672,26 @@
             const q30 = document.querySelector('input[name="q30"]:checked');
             if (q30 && q30.value === 'correct') score += 1;
 
-            const inlineTag = document.querySelector('input[name="inlineTag"]:checked');
-            if (inlineTag && inlineTag.value === 'correct') score += 1;
+            const q31 = document.querySelector('input[name="q31"]:checked');
+            if (q31 && q31.value === 'correct') score += 1;
 
-            const blockTag = document.querySelector('input[name="blockTag"]:checked');
-            if (blockTag && blockTag.value === 'correct') score += 1;
-            // Check answer for layout tag question
-            // Check answer for input type question
-            const inputType = document.querySelector('input[name="inputType"]:checked');
-            if (inputType && inputType.value === 'correct') score += 1;
-            // Check answer for id attribute question
-            const idAttribute = document.querySelector('input[name="idAttribute"]:checked');
-            if (idAttribute && idAttribute.value === 'correct') score += 1;
+            const q32 = document.querySelector('input[name="q32"]:checked');
+            if (q32 && q32.value === 'correct') score += 1;
 
-            // Check answer for class attribute question
-            const classAttribute = document.querySelector('input[name="classAttribute"]:checked');
-            if (classAttribute && classAttribute.value === 'correct') score += 1;
+            const q33 = document.querySelector('input[name="q33"]:checked');
+            if (q33 && q33.value === 'correct') score += 1;
 
-            // Check answer for responsive design question
-            const responsiveDesign = document.querySelector('input[name="responsiveDesign"]:checked');
-            if (responsiveDesign && responsiveDesign.value === 'correct') score += 1;
+            const q34 = document.querySelector('input[name="q34"]:checked');
+            if (q34 && q34.value === 'correct') score += 1;
 
-            // Check answer for layout tag question
-            const layoutTag = document.querySelector('input[name="layoutTag"]:checked');
-            if (layoutTag && layoutTag.value === 'correct') score += 1;
+            const q35 = document.querySelector('input[name="q35"]:checked');
+            if (q35 && q35.value === 'correct') score += 1;
+
+            const q36 = document.querySelector('input[name="q36"]:checked');
+            if (q36 && q36.value === 'correct') score += 1;
+
+            const q37 = document.querySelector('input[name="q37"]:checked');
+            if (q37 && q37.value === 'correct') score += 1;
 
             // Calculate percentage
             const percentage = (score / totalQuestions) * 100;
